@@ -7,8 +7,19 @@ export const firm = {
   fax: "(614) 655-8260",
   email: "craig@spadaforelaw.com",
   address: "513 East Rich Street",
-  city: "Columbus, OH 43215",
+  city: "Columbus",
+  region: "OH",
+  postalCode: "43215",
+  cityLine: "Columbus, OH 43215",
+  country: "US",
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=513+East+Rich+Street+Columbus+OH+43215",
+  geo: {
+    latitude: 39.9574,
+    longitude: -82.9874,
+  },
+  /** Small-firm practice; consultations are scheduled directly. */
+  hoursNote: "By appointment",
   linkedIn: "https://www.linkedin.com/",
+  responseTime: "one business day",
 } as const;

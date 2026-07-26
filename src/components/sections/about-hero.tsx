@@ -7,10 +7,11 @@ import { ArrowRight, Phone } from "lucide-react";
 import { CountUp } from "@/components/motion/count-up";
 import { Button } from "@/components/ui/button";
 import { attorney, firm } from "@/lib/content";
+import type { ReactNode } from "react";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-export function AboutHero() {
+export function AboutHero({ breadcrumbs }: { breadcrumbs?: ReactNode }) {
   const reduce = useReducedMotion();
 
   return (
@@ -18,6 +19,7 @@ export function AboutHero() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(154_123_79_/_0.16),transparent_55%)]" />
 
       <div className="relative mx-auto max-w-6xl px-5 md:px-8">
+        {breadcrumbs}
         <div className="grid items-end gap-14 md:grid-cols-12">
           <div className="md:col-span-7">
             <motion.div

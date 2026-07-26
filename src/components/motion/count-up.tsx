@@ -18,18 +18,13 @@ export function CountUp({
   const [display, setDisplay] = useState(0);
 
   useEffect(() => {
-    if (!inView) return;
-    if (reduce) {
-      setDisplay(value);
-      return;
-    }
+    if (!inView || reduce) return;
 
     let frame = 0;
     const start = performance.now();
 
     const tick = (now: number) => {
       const progress = Math.min((now - start) / duration, 1);
-      // ease-out cubic keeps the final digits from snapping abruptly
       const eased = 1 - Math.pow(1 - progress, 3);
       setDisplay(Math.round(eased * value));
       if (progress < 1) frame = requestAnimationFrame(tick);
@@ -39,9 +34,11 @@ export function CountUp({
     return () => cancelAnimationFrame(frame);
   }, [inView, reduce, value, duration]);
 
+  const output = reduce ? (inView ? value : 0) : display;
+
   return (
     <span ref={ref}>
-      {display}
+      {output}
       {suffix}
     </span>
   );

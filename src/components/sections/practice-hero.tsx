@@ -5,10 +5,11 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDownRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { firm, practiceAreas } from "@/lib/content";
+import type { ReactNode } from "react";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-export function PracticeHero() {
+export function PracticeHero({ breadcrumbs }: { breadcrumbs?: ReactNode }) {
   const reduce = useReducedMotion();
 
   return (
@@ -16,6 +17,7 @@ export function PracticeHero() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgb(154_123_79_/_0.16),transparent_55%)]" />
 
       <div className="relative mx-auto max-w-6xl px-5 md:px-8">
+        {breadcrumbs}
         <motion.div
           className="flex items-center gap-3"
           initial={reduce ? false : { opacity: 0, y: 14 }}

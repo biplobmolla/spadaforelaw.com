@@ -75,7 +75,7 @@
   --secondary: #e9edf1;
   --secondary-foreground: #0b1c2c;
   --muted: #e9edf1;
-  --muted-foreground: #4a5c6e;
+  --muted-foreground: #3a4a5a;
   --accent: #9a7b4f;
   --accent-foreground: #ffffff;
   --destructive: oklch(0.577 0.245 27.325);
@@ -114,6 +114,35 @@
       radial-gradient(ellipse 60% 40% at 0% 100%, rgb(11 28 44 / 0.05), transparent);
   }
 
+  :focus-visible {
+    outline: none;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  [role="button"]:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  summary:focus-visible {
+    @apply ring-2 ring-brass ring-offset-2 ring-offset-background;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
   ::selection {
     background: color-mix(in srgb, var(--brass) 35%, transparent);
     color: var(--ink);
@@ -123,6 +152,10 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .safe-bottom {
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
   }
 
   .grain {

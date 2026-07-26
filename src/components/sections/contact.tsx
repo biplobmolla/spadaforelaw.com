@@ -35,7 +35,7 @@ export function ContactSection() {
                 <span>
                   {firm.address}
                   <br />
-                  {firm.city}
+                  {firm.cityLine}
                 </span>
               </a>
             </li>

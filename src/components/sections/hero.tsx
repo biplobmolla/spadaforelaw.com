@@ -25,8 +25,9 @@ export function HeroSection() {
           alt="Modern architectural facade representing professional counsel in Columbus"
           fill
           priority
-          className="object-cover object-center"
           sizes="100vw"
+          quality={80}
+          className="object-cover object-center"
         />
       </motion.div>
 

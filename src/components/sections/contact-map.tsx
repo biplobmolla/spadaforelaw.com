@@ -4,7 +4,7 @@ import { FadeIn } from "@/components/motion/fade-in";
 import { firm } from "@/lib/content";
 
 const mapSrc = `https://maps.google.com/maps?q=${encodeURIComponent(
-  `${firm.address}, ${firm.city}`
+  `${firm.address}, ${firm.cityLine}`
 )}&z=15&output=embed`;
 
 export function ContactMap() {
@@ -19,7 +19,7 @@ export function ContactMap() {
             <h2 className="mt-3 font-serif text-3xl tracking-tight text-ink md:text-4xl">
               {firm.address}
             </h2>
-            <p className="mt-2 text-muted-foreground">{firm.city}</p>
+            <p className="mt-2 text-muted-foreground">{firm.cityLine}</p>
           </div>
           <a
             href={firm.mapsUrl}
@@ -34,7 +34,7 @@ export function ContactMap() {
         <FadeIn delay={0.12}>
           <div className="relative aspect-[16/10] overflow-hidden border border-mist-deep bg-ink/5 md:aspect-[21/9]">
             <iframe
-              title={`Map showing Spadafore Law at ${firm.address}, ${firm.city}`}
+              title={`Map showing Spadafore Law at ${firm.address}, ${firm.cityLine}`}
               src={mapSrc}
               className="absolute inset-0 h-full w-full grayscale contrast-[1.05] transition-[filter] duration-700 hover:grayscale-0"
               loading="lazy"

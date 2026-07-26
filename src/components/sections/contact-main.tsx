@@ -110,7 +110,7 @@ export function ContactMain() {
                     <span className="mt-1 block text-[0.95rem] leading-relaxed text-ink">
                       {firm.address}
                       <br />
-                      {firm.city}
+                      {firm.cityLine}
                     </span>
                   </span>
                 </a>
@@ -141,7 +141,7 @@ export function ContactMain() {
               <p className="font-serif text-xl text-ink">One business day.</p>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 That is our typical response window for consultation requests and
-                general inquiries.
+                general inquiries. Office consultations are {firm.hoursNote.toLowerCase()}.
               </p>
             </div>
           </FadeIn>
